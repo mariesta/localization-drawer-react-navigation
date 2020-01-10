@@ -2,20 +2,20 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 // the translations
-// (tip move them in a JSON file and import them)
+// (tip: move them in a JSON file and import them)
 const resources = {
   en: {
     translation: {
       "screen": "Screen {{ order }}",
-      "change_language_english": "Change language to english",
-      "change_language_french": "Change language to french"
+      "change_language_english": "In english",
+      "change_language_french": "In french"
     }
   },
   fr: {
     translation: {
       "screen": "Écran {{ order }}",
-      "change_language_english": "Changer la langue en anglais",
-      "change_language_french": "Changer la langue en français"
+      "change_language_english": "En anglais",
+      "change_language_french": "En français"
     }
   }
 };
@@ -30,7 +30,7 @@ i18n
     fallbackLng: 'en',
     debug: true,
     interpolation: {
-      escapeValue: false // react already is safe from xss
+      escapeValue: false // react is already safe from xss
     }
   });
 

@@ -9,7 +9,7 @@ import Screen1 from '../screens/Screen1';
 import Screen2 from '../screens/Screen2';
 import Screen3 from '../screens/Screen3';
 
-const Screen1Stack = createStackNavigator(
+const Drawer1Stack = createStackNavigator(
   {
     Home: {
       screen: Screen1,
@@ -27,11 +27,11 @@ const Screen1Stack = createStackNavigator(
   }
 );
 
-Screen1Stack.navigationOptions = ({ screenProps: { t } }) => ({
+Drawer1Stack.navigationOptions = ({ screenProps: { t } }) => ({
   drawerLabel: t('screen', { order: 1 }),
 });
 
-const Screen2Stack = createStackNavigator(
+const Drawer2Stack = createStackNavigator(
   {
     Home: {
       screen: Screen2,
@@ -49,11 +49,11 @@ const Screen2Stack = createStackNavigator(
   }
 );
 
-Screen2Stack.navigationOptions = ({ screenProps: { t } }) => ({
+Drawer2Stack.navigationOptions = ({ screenProps: { t } }) => ({
   drawerLabel: t('screen', { order: 2 }),
 });
 
-const Screen3Stack = createStackNavigator(
+const Drawer3Stack = createStackNavigator(
   {
     Home: {
       screen: Screen3,
@@ -71,16 +71,14 @@ const Screen3Stack = createStackNavigator(
   }
 );
 
-Screen3Stack.navigationOptions = ({ screenProps: { t } }) => ({
+Drawer3Stack.navigationOptions = ({ screenProps: { t } }) => ({
   drawerLabel: t('screen', { order: 3 }),
 });
 
 const drawerNavigator = createDrawerNavigator({
-  Screen1Stack,
-  Screen2Stack,
-  Screen3Stack
+  Drawer1Stack,
+  Drawer2Stack,
+  Drawer3Stack
 });
-
-drawerNavigator.path = '';
 
 export default drawerNavigator;
