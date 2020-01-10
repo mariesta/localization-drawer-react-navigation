@@ -27,6 +27,10 @@ const Screen1Stack = createStackNavigator(
   }
 );
 
+Screen1Stack.navigationOptions = ({ screenProps: { t } }) => ({
+  drawerLabel: t('screen', { order: 1 }),
+});
+
 const Screen2Stack = createStackNavigator(
   {
     Home: {
@@ -44,6 +48,10 @@ const Screen2Stack = createStackNavigator(
     }
   }
 );
+
+Screen2Stack.navigationOptions = ({ screenProps: { t } }) => ({
+  drawerLabel: t('screen', { order: 2 }),
+});
 
 const Screen3Stack = createStackNavigator(
   {
@@ -63,25 +71,14 @@ const Screen3Stack = createStackNavigator(
   }
 );
 
+Screen3Stack.navigationOptions = ({ screenProps: { t } }) => ({
+  drawerLabel: t('screen', { order: 3 }),
+});
+
 const drawerNavigator = createDrawerNavigator({
-  Screen1: {
-     screen: Screen1Stack,
-     navigationOptions:  ({ screenProps: { t } }) => ({
-       drawerLabel: t('screen', { order: 1}),
-     })
-  },
-  Screen2: {
-    screen: Screen2Stack,
-    navigationOptions:  ({ screenProps: { t } }) => ({
-      drawerLabel: t('screen', { order: 2 }),
-    })
-  },
-  Screen3: {
-    screen: Screen3Stack,
-    navigationOptions:  ({ screenProps: { t } }) => ({
-      drawerLabel: t('screen', { order:  3 }),
-    })
-  }
+  Screen1Stack,
+  Screen2Stack,
+  Screen3Stack
 });
 
 drawerNavigator.path = '';
